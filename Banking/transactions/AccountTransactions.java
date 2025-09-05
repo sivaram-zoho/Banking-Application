@@ -37,8 +37,8 @@ public class AccountTransactions {
             } else if (transaction.startsWith("Amount-") && transaction.contains("Received From")) {
                 transactionType = "Fund Transfer";
                 amount = Double.parseDouble(transaction.split(" ")[1]);
-            } else if (transaction.startsWith("Interest Added -")) {
-                transactionType = "Interest Added";
+            } else if (transaction.startsWith("Interest Added - ")) {
+                transactionType = "Add Interest";
                 amount = Double.parseDouble(transaction.replace("Interest Added - ", ""));
             }
 
